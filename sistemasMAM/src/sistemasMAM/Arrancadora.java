@@ -11,7 +11,7 @@ public class Arrancadora {
 
         //Llamamos al metodo que nos crea la conexion 
         Connection conexion = con.getConexion();
-      //Comprobamos que la conexion no sea nula (es decir hay un error)
+        //Comprobamos que la conexion no sea nula (es decir hay un error)
         if(conexion == null){
             System.out.println("Error con la conexion a la BD!!");
         }
