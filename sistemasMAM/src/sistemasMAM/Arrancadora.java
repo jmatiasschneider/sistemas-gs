@@ -23,7 +23,7 @@ public class Arrancadora {
                 //Si la conexion es correta podemos usarla para hacer consultas sobre la BD
                 
                 //CONSULTAS AQUI
-                Usuario usu = new Usuario("jony", "Jonathan", "3");
+                Usuario usu = new Usuario("asesino", "gato", "2");
                 // REALIZO LA CONSULTA O INSTRUCCION SQL
                 try {
                 	   Statement consulta = conexion.createStatement();
