@@ -16,9 +16,9 @@ public class Conexion {
             this.servidor = servidor;
             this.database = database;
  
-            Class.forName("com.mysql.jdbc.Driver");
-            //Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
-            url="jdbc:mysql://"+servidor+"/"+database;
+            //Class.forName("com.mysql.jdbc.Driver");
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            url="jdbc:mysql://"+servidor+"/"+database+"?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
             conexion=DriverManager.getConnection(url, usuario, password);
             System.out.println("Conexion a Base de Datos "+url+" . . . . .Ok");
  
