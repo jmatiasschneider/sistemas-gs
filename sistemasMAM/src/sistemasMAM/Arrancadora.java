@@ -17,7 +17,7 @@ public class Arrancadora {
         if(conexion == null){
             System.out.println("Error con la conexion a la BD!!");
         }
-        else{
+        else{ 
             try {
                 System.out.println("Conexion a la BD correcta!!");
                 //Si la conexion es correta podemos usarla para hacer consultas sobre la BD
