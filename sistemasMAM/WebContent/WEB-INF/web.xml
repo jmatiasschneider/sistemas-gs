@@ -13,7 +13,7 @@
   <load-on-startup>1</load-on-startup>
 </servlet>
 <servlet-mapping>
-  <servlet-name>altausu</servlet-name>
+  <servlet-name>altausu</servlet-name> 
   <url-pattern>/rest/*</url-pattern>
 </servlet-mapping>
 </web-app>
