@@ -15,7 +15,7 @@ import javax.ws.rs.core.MediaType;
 public class ServiciosUsuario {
 	
     @GET
-    @Path("/{param}")
+    @Path("/{param}") 
     @Produces(MediaType.TEXT_HTML)
     public String cargoUsuario(@PathParam("param") String nombre) {
     	////////////////////////////////////////////////////////
