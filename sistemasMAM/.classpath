@@ -8,7 +8,13 @@
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
-	<classpathentry kind="lib" path="C:/MySQLconector/mysql-connector-java-5.1.39-bin.jar"/>
-	<classpathentry kind="lib" path="C:/Javax ws/javax.ws.rs-api-2.0.jar"/>
+	<classpathentry kind="lib" path="C:/JARs de Java/mysql-connector-java-5.1.39-bin.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jst.server.core.container/org.eclipse.jst.server.tomcat.runtimeTarget/Apache Tomcat v7.0"/>
+	<classpathentry kind="lib" path="C:/JARs de Java/javax.ws.rs-api-2.0.jar"/>
+	<classpathentry kind="lib" path="C:/JARs de Java/jersey-bundle-1.17.1.jar"/>
+	<classpathentry kind="lib" path="C:/JARs de Java/jersey-servlet-1.18.jar"/>
+	<classpathentry kind="lib" path="C:/JARs de Java/asm-3.1.jar"/>
+	<classpathentry kind="lib" path="C:/JARs de Java/jersey-core-1.8.jar"/>
+	<classpathentry kind="lib" path="C:/JARs de Java/jersey-server-1.8.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
