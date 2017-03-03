@@ -5,6 +5,7 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
 import java.sql.*;
+import java.util.*;
 
 @Path("/ordenes")
 public class OrdenesController {
@@ -43,8 +44,10 @@ public class OrdenesController {
 	}
 
 	@GET
+	@Produces(MediaType.APPLICATION_JSON)
 	public static Response listaOrdenes() {
 		Statement consulta;
+		String ordenes = "";
 
 		try {
 
@@ -54,7 +57,22 @@ public class OrdenesController {
 
 			ResultSet resultado = consulta.executeQuery(aEjecutar);
 
-			return Response.ok(resultado, MediaType.APPLICATION_JSON).build();
+			while (resultado.next()) {
+				if (resultado.isFirst())
+					ordenes = "[";
+				else
+					ordenes = ordenes + ",";
+
+				ordenes = ordenes + "{\"numero\":\"" + resultado.getString(1)
+						+ "\"," + "\"descripcion\":\"" + resultado.getString(2)
+						+ "\"," + "\"usuario\":\"" + resultado.getString(3)
+						+ "\"}";
+
+				if (resultado.isLast())
+					ordenes = ordenes + "]";
+			}
+
+			return Response.status(200).entity(ordenes).build();
 		} catch (SQLException e) {
 			System.out.println(e.getMessage());
 			System.out.println("Error en select");
