@@ -12,9 +12,10 @@
             <param-name>jersey.config.server.provider.packages</param-name>
             <param-value>sistemasMAM</param-value>
          </init-param>
+      
       </servlet>
    <servlet-mapping>
    <servlet-name>Jersey RESTful Application</servlet-name>
-      <url-pattern>/rest/*</url-pattern>
+      <url-pattern>/*</url-pattern>
    </servlet-mapping>  
 </web-app>

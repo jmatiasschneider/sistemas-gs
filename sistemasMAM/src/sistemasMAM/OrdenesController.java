@@ -1,0 +1,66 @@
+package sistemasMAM;
+
+import javax.ws.rs.*;
+import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
+
+import java.sql.*;
+
+@Path("/ordenes")
+public class OrdenesController {
+
+	public static void init() {
+
+	}
+
+	@POST
+	@Path("/{orden}")
+	public static Response guardarOrden(String body,
+			@PathParam("orden") String nuevaOrden) {
+		Statement consulta;
+
+		try {
+
+			consulta = Conexion.getConexion().createStatement();
+
+			String aEjecutar = "INSERT INTO ordenes (nro_orden, descripcion, usuario) VALUES ('"
+					+ nuevaOrden + "', '" + body + "', 'ma')";
+
+			consulta.executeUpdate(aEjecutar);
+			consulta.close();
+
+			System.out.println("Se ha registrado Exitosamente");
+
+			return Response.status(200).entity("Orden Guardada").build();
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+			System.out.println("No se Registro la orden");
+
+			return Response.status(512).entity("No se Registro la orden")
+					.build();
+		}
+
+	}
+
+	@GET
+	public static Response listaOrdenes() {
+		Statement consulta;
+
+		try {
+
+			consulta = Conexion.getConexion().createStatement();
+
+			String aEjecutar = "SELECT * FROM ordenes";
+
+			ResultSet resultado = consulta.executeQuery(aEjecutar);
+
+			return Response.ok(resultado, MediaType.APPLICATION_JSON).build();
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+			System.out.println("Error en select");
+
+			return Response.status(500).entity("Error en select").build();
+		}
+
+	}
+}
